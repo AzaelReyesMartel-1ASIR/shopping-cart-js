@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azael Reyes Martel - Recuperación de UT3 - Carrito con DOM</title>
+    </head>
+<body>
+    <header>
+        <h1>Mi Tienda</h1>
+        <div id="cart-summary">
+            Artículos: <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="products">
+            <h2>Productos:</h2>
+            <div id="product-list" class="grid-container"></div>
+        </section>
+
+        <section class="cart">
+            <h2>Mi Carrito</h2>
+            <div id="cart-items-container">
+                <p>El carrito está vacío.</p>
+            </div>
+            
+            <div class="cart-footer">
+                <h3>Total: <span id="cart-total">0.00</span>€</h3>
+                <button id="btn-clear-cart" disabled>Vaciar Carrito</button>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

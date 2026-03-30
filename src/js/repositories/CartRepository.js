@@ -1,4 +1,5 @@
 // js/repositories/CartRepository.js
+import { CartItem } from '../models/CartItem.js';
 import { CartError } from '../exceptions.js';
 
 export class CartRepository {
@@ -22,10 +23,13 @@ export class CartRepository {
     loadCartItems() {
         try {
             const data = localStorage.getItem(this.storageKey);
-            // Si hay datos los parseamos, si es null devolvemos un array vacío
-            return data ? JSON.parse(data) : [];
+            if (data) {
+            const plainItems = JSON.parse(data);
+            return plainItems.map(item => new CartItem(item.product, item.quantity));
+            }
+            return [];
         } catch (error) {
-            console.error("El storage falló al cargar:", error);
+            console.error("El storage estaba corrupto, se reinicia el carrito");
             return [];
         }
     }

@@ -1,0 +1,104 @@
+/* src/css/style.css */
+/* Reseteo básico para que se vea igual en todos los navegadores */
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Estilo del header tipo navbar de aplicación */
+header {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+#cart-summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Rejilla responsive para los productos (Tema layout moderno) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Tarjetas de productos y panel del carrito */
+.product-card, .cart {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+/* Botones genéricos */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.btn-add {
+    background: #0d6efd;
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-add:hover { background: #0b5ed7; }
+
+/* Lista de items del carrito */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-remove {
+    background: transparent;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+/* Pie del carrito donde va el total */
+.cart-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+#btn-clear-cart {
+    background: #dc3545;
+    color: white;
+}
+
+#btn-clear-cart:disabled {
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}

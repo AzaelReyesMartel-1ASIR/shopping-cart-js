@@ -46,4 +46,10 @@ export class CartService {
     getItems() {
         return this.items;
     }
+
+    // vaciamos el carrito
+    clearCart() {
+        this.items = [];
+        this.repository.saveCartItems(this.items);
+    }
 }
